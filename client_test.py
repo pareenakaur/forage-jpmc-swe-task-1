@@ -20,7 +20,7 @@ class ClientTest(unittest.TestCase):
     """ ------------ Add the assertion below ------------ """
 
 
-  """ ------------ Add more unit tests ------------ """
+  """ ------------ Add more unit tests ------------- """
 
 
 
