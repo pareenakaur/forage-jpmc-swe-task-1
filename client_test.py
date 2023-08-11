@@ -1,4 +1,7 @@
+import random
 import unittest
+import urllib.request
+
 from client3 import getDataPoint
 
 class ClientTest(unittest.TestCase):
@@ -23,3 +26,11 @@ class ClientTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    for _ in iter(range(N)):
+      quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
+
+      prices = {}
+      for quote in quotes:
+        stock, bid_price, ask_price, price = getDataPoint(quote)
+        price[stock] = price
+        print("Quoted %s at (bid:$s, ask:%s, price:%s)" %(stock, bid_price, ask_price, price))
